@@ -1,29 +1,8 @@
-### Get started
+1. find-agent 模仿3days 3pages来做的
+2. awasome-scoll-effect 不错的滚动色差效果 就是完全抄的w3ctrain的[这个](http://w3ctrain.com/2015/08/01/scroll-effect/)只是将其改为全页显示
 
-This is a simple boilerplate project for web designer/developer, it contains the following things:
 
-1.	Guardfile to watch changes
-2.	config.rb used for compass
-3.	A very simple HTML5 boilerplate file
 
-To use it, simply clone this repo and :
 
-```sh
-$ bundle install
-```
 
-After the required `gem`s are installed, you can then run 
 
-```sh
-$ guard start
-```
-
-And if you dont have the amazing chrome [plugin](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) installed, you should. 
-
-Once it's installed, open the page in browser, and click the `live reload` button to enabled. You should then see something like this if you have `guard` started:
-
-```
-[1] guard(main)> 23:58:49 - INFO - Browser connected.
-```
-
-That's it, have fun with coding more interesting stuff.
