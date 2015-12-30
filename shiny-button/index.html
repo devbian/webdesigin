@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tmpl</title>
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <style type="text/css">
+    .btn {
+        border-radius: 5px;
+        background: #4472ff;
+        border: 1px solid #4472ff;
+        color: white;
+        cursor: pointer;
+        display: inline-block;
+        line-height: 44px;
+        letter-spacing: .5px;
+        margin: 0;
+        outline: none;
+        padding: 0 25px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: capitalize;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .btn-shiny::after {
+        content: ' ';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        bottom: -50%;
+        left: -50%;
+        background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255, 255, 255, 0.5) 50%, rgba(229, 172, 142, 0));
+        transform: rotateZ(60deg) translate(-5em, 9em);
+    }
+    
+    .btn-shiny:hover::after,
+    .btn-shiny:focus::after {
+        animation: sheen 1s forwards;
+    }
+    
+    @keyframes sheen {
+        100% {
+            transform: rotateZ(60deg) translate(1em, -9em);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <button class='btn btn-shiny'>Oooh SHINY</button>
+    <script src="./js/jquery.js"></script>
+    <script type="text/javascript">
+    $(function() {
+
+    });
+    </script>
+</body>
+
+</html>
