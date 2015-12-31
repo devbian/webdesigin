@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>滴滴手札</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script src="js/common.js"></script>
+    <script src="js/share.js"></script>
+    <script>
+        common.initPage(640).lazyBgImg('bimg');
+    </script>
+</head>
+<body>
+<audio src="bg.mp3" id="player" loop="loop" style="display:none;height:0;"></audio>
+<div id="loading" class="loading"><span><i></i>%</span></div>
+<div id="arrow" class="arrow" style="display:none;"></div>
+<div id="page" class="page">
+    <div id="music" class="music" style="display:none;"></div>
+    <section class="s-index">
+        <div id="text" class="text"></div>
+        <div id="road" class="road"></div>
+        <div class="dot"></div>
+        <div id="mask" class="mask"></div>
+    </section>
+    <!--路-->
+    <section data-animation="Light" class="s-road" data-bimg="images/road_bg.png">
+        <div id="road_number" class="number" data-num="17326" data-fieldname="totalDistance"></div>
+        <div class="light-root" data-bimg="images/road_light.png"></div>
+        <div id="light" class="light light-1"></div>
+    </section>
+    <!--行-->
+    <section data-animation="Walk" class="s-walk" data-bimg="images/walk_bg.png">
+        <div id="walk_number" class="number" data-num="172" data-fieldname="succOrderNum"></div>
+        <div class="walk-mask"></div>
+        <div class="walk-text"></div>
+        <div class="walk-road"></div>
+    </section>
+    <!--遇-->
+    <section data-animation="Meet" class="s-meet" data-bimg="images/meet_bg.png">
+        <div id="mostDriverName" class="name"></div>
+        <div id="meet_number" class="number" data-num="2" data-fieldname="mostDriverNum"></div>
+        <div id="meet" class="meet meet-1" data-bimg="images/meet_group.png"></div>
+    </section>
+    <!--等-->
+    <section data-animation="Wait" class="s-wait" data-bimg="images/wait_bg.png">
+        <div class="time"></div>
+        <div class="dot"></div>
+        <div id="wait_number" class="number" data-num="890" data-fieldname="totalWaitTime"></div>
+    </section>
+    <!--归-->
+    <section id="mostNight" class="s-come page-filter" data-bimg="images/come_bg.png">
+        <div class="come-mask"></div>
+        <div class="come-text"></div>
+        <div class="come-wild-goose"></div>
+    </section>
+    <!--晓-->
+    <section id="mostMorning" data-animation="Morning" class="s-morning page-filter" data-bimg="images/morning_bg.png">
+        <div id="morning" class="morning morning-1"></div>
+    </section>
+    <!--禄.上午-->
+    <section id="mostAM" data-animation="BusyAm" class="s-busy-am page-filter" data-bimg="images/busy_am_bg.png">
+        <div id="busy_am" class="busy-am busy-am-1"></div>
+    </section>
+    <!--禄.下午-->
+    <section id="mostPM" data-animation="BusyPm" class="s-busy-pm page-filter" data-bimg="images/busy_pm_bg.png">
+        <div id="busy_pm" class="busy-pm busy-pm-1"></div>
+    </section>
+    <!--礼-->
+    <section data-animation="Gift" class="s-gift">
+        <div id="gift_number" class="number" data-num="10" data-fieldname="couponAmount"></div>
+        <div id="gift" class="gift gift-1" data-bimg="images/gift_group.png"></div>
+    </section>
+    <!--尾-->
+    <section data-animation="FootSilk" class="s-foot" data-bimg="images/foot_bg.png">
+        <div style="display:none;" class="share" id="shareBtn" onclick="getGift()"></div>
+        <div style="display:none;" class="share share-2" id="shareBtn2" onclick="getGift2()"></div>
+        <div class="silk-root"></div>
+        <div id="silk" class="silk silk-1" data-bimg="images/foot_silk_group.png"></div>
+    </section>
+</div>
+<script src="js/index.js"></script>
+<div style="display:none">
+	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257022131'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1257022131' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+</body>
+</html>

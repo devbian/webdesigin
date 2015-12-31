@@ -1,0 +1,26 @@
+html,body{
+    height:100%;
+}
+i{
+    font-style: normal;
+}
+body{
+    margin:0;
+    font-size:0.24rem;
+    color:#000;
+    background-color:#ffffff;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+img{
+    display:block;
+}
+input{
+    outline: none;
+}
+.page{
+    margin:0 auto;
+    position:relative;
+}
+.d-none{
+    display:none;
+}

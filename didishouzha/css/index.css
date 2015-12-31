@@ -1,0 +1,894 @@
+@charset "UTF-8";
+body {
+    overflow: hidden;
+}
+
+.loading {
+    background: url("../images/loading.gif") no-repeat;
+    width: 2.05rem;
+    height: 2.05rem;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -1.18rem;
+    margin-left: -1.03rem;
+}
+
+.loading span {
+    text-align: center;
+    display: block;
+    padding-top: 0.64rem;
+    font-size: 0.28rem;
+    color: #ffffff;
+}
+
+.arrow {
+    background: url("../images/arrow.gif") no-repeat;
+    width: 0.89rem;
+    height: 0.62rem;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    z-index: 19;
+    bottom: 0;
+    left: 50%;
+    margin-left: -0.445rem;
+}
+
+.music {
+    background: url("../images/music.png") no-repeat;
+    width: 0.54rem;
+    height: 0.54rem;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    z-index: 19;
+    top: 0.2rem;
+    right: 0.2rem;
+    -webkit-animation: musicAni 2s linear infinite both;
+    animation: musicAni 2s linear infinite both;
+}
+
+.music.paused {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+.page {
+    height: 100%;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.page section {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    -webkit-background-size: 6.4rem 10.4rem;
+    background-size: 6.4rem 10.4rem;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    /*首页*/
+    /*路*/
+    /*行*/
+    /*遇*/
+    /*等*/
+    /*归*/
+    /*晓*/
+    /*禄-上午*/
+    /*禄-下午*/
+    /*礼*/
+    /*尾*/
+}
+
+.page section.transition {
+    -webkit-transition: top 0.5s cubic-bezier(0.01, 0.66, 1, 1);
+    -moz-transition: top 0.5s cubic-bezier(0.01, 0.66, 1, 1);
+    -ms-transition: top 0.5s cubic-bezier(0.01, 0.66, 1, 1);
+    -o-transition: top 0.5s cubic-bezier(0.01, 0.66, 1, 1);
+    transition: top 0.5s cubic-bezier(0.01, 0.66, 1, 1);
+}
+
+.page section .number {
+    font-size: 0.83rem;
+    color: #c6102f;
+    letter-spacing: -0.01rem;
+    font-weight: bold;
+    position: absolute;
+}
+
+.page section.s-index {
+    background-image: url("../images/index_bg.png");
+    display: block;
+}
+
+.page section.s-index .road {
+    position: absolute;
+    left: 0;
+    top: 0.76rem;
+    background: url("../images/index_road.png") no-repeat;
+    width: 5.85rem;
+    height: 9.64rem;
+    -webkit-background-size: cover;
+    background-size: cover;
+    z-index: 1;
+    display: none;
+}
+
+.page section.s-index .mask {
+    background: url("../images/index_mask.png") no-repeat;
+    width: 6.4rem;
+    height: 10.4rem;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    -webkit-animation: indexRoad 3s linear both;
+    animation: indexRoad 3s linear both;
+    display: none;
+}
+
+.page section.s-index .dot {
+    background: url("../images/index_dot.png") no-repeat;
+    width: 6.18rem;
+    height: 10.23rem;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    top: 0.2rem;
+    left: 0;
+    z-index: 3;
+}
+
+.page section.s-index .text {
+    position: absolute;
+    top: 0;
+    left: 0.93rem;
+    background: url("../images/index_text.png") no-repeat;
+    width: 0.3rem;
+    height: 10.4rem;
+    -webkit-background-size: cover;
+    background-size: cover;
+    z-index: 4;
+}
+
+.page section.s-index .name {
+    font-size: 0.265rem;
+    color: #4b0d06;
+    font-weight: bold;
+    position: absolute;
+    top: 4.7rem;
+    left: 0.95rem;
+    z-index: 5;
+    width: 0.27rem;
+    text-align: center;
+}
+
+.page section.s-road .number {
+    top: 1.2rem;
+    right: 3.35rem;
+}
+
+.page section.s-road .light-root {
+    background-repeat: no-repeat;
+    width: 6.4rem;
+    height: 6.02rem;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    top: 4.38rem;
+    left: 0;
+}
+
+.page section.s-road .light {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.page section.s-road .light.light-1 {
+    background-image: url("../images/road_light_1.png");
+    width: 5.66rem;
+    height: 3.02rem;
+    position: absolute;
+    top: 7.44rem;
+    left: 0.45rem;
+}
+
+.page section.s-road .light.light-2 {
+    background-image: url("../images/road_light_2.png");
+    width: 4.62rem;
+    height: 3.02rem;
+    position: absolute;
+    top: 7.26rem;
+    left: 1.3rem;
+}
+
+.page section.s-road .light.light-3 {
+    background-image: url("../images/road_light_3.png");
+    width: 5.42rem;
+    height: 3.69rem;
+    position: absolute;
+    top: 6.77rem;
+    left: 0.72rem;
+}
+
+.page section.s-walk .number {
+    top: 8.8rem;
+    right: 3.15rem;
+}
+
+.page section.s-walk .walk-road {
+    background-image: url("../images/walk_road.png");
+    background-repeat: no-repeat;
+    width: 6.4rem;
+    height: 5.45rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.page section.s-walk .walk-mask {
+    position: absolute;
+    background-image: url("../images/walk_mask.png");
+    background-repeat: no-repeat;
+    width: 12.4rem;
+    height: 11.08rem;
+    top: -3.4rem;
+    left: -4.5rem;
+    z-index: 3;
+    -webkit-background-size: cover;
+    background-size: cover;
+    -webkit-animation: walkMask 2s linear 0.5s both;
+    animation: walkMask 2s linear 0.5s both;
+}
+
+.page section.s-walk .walk-text {
+    position: absolute;
+    background-image: url("../images/walk_text.png");
+    background-repeat: no-repeat;
+    width: 5.89rem;
+    height: 9.7rem;
+    top: 0;
+    left: 0.5rem;
+    z-index: 3;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.page section.s-meet .name {
+    position: absolute;
+    top: 2.27rem;
+    right: 0.59rem;
+    font-size: 0.29rem;
+    color: #c31818;
+    font-weight: bold;
+    letter-spacing: -0.02rem;
+}
+
+.page section.s-meet .number {
+    top: 3.07rem;
+    right: 1.05rem;
+}
+
+.page section.s-meet .meet {
+    background-repeat: no-repeat;
+    -webkit-background-size: 18rem 12rem;
+    background-size: 18rem 12rem;
+    position: absolute;
+}
+
+.page section.s-meet .meet.meet-1 {
+    width: 4.01rem;
+    height: 4.8rem;
+    top: 5.48rem;
+    left: 1.22rem;
+    background-position: 0 0;
+}
+
+.page section.s-meet .meet.meet-2 {
+    background-position: -5.12rem 0;
+    width: 3.91rem;
+    height: 4.8rem;
+    top: 5.48rem;
+    left: 1.27rem;
+}
+
+.page section.s-meet .meet.meet-3 {
+    background-position: -10.15rem 0;
+    width: 3.81rem;
+    height: 4.8rem;
+    top: 5.48rem;
+    left: 1.32rem;
+}
+
+.page section.s-meet .meet.meet-4 {
+    background-position: -14.55rem 0;
+    width: 3.71rem;
+    height: 4.8rem;
+    top: 5.48rem;
+    left: 1.37rem;
+}
+
+.page section.s-meet .meet.meet-5 {
+    background-position: 0 -7.2rem;
+    width: 3.81rem;
+    height: 4.8rem;
+    top: 5.48rem;
+    left: 1.32rem;
+}
+
+.page section.s-meet .meet.meet-6 {
+    background-position: -6.5rem -7.2rem;
+    width: 3.91rem;
+    height: 4.8rem;
+    top: 5.48rem;
+    left: 1.27rem;
+}
+
+.page section.s-meet .meet.meet-7 {
+    background-position: -12.21rem -7.19rem;
+    width: 4.01rem;
+    height: 4.8rem;
+    top: 5.48rem;
+    left: 1.22rem;
+}
+
+.page section.s-wait .time {
+    background: url("../images/wait_time.png") no-repeat;
+    width: 0.37rem;
+    height: 1.33rem;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    top: 3.70rem;
+    left: 5.69rem;
+    -webkit-transform-origin: 90% 7%;
+    transform-origin: 90% 7%;
+    -webkit-animation: waitTime 12s cubic-bezier(0.17, -0.51, 1, 1) infinite both;
+    animation: waitTime 12s cubic-bezier(0.17, -0.51, 1, 1) infinite both;
+    z-index: 1;
+}
+
+.page section.s-wait .dot {
+    background: url("../images/wait_dot.png") no-repeat;
+    width: 0.29rem;
+    height: 0.29rem;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    top: 3.63rem;
+    left: 5.87rem;
+    z-index: 2;
+}
+
+.page section.s-wait .number {
+    top: 5.99rem;
+    right: 3.75rem;
+}
+
+.page section.s-come .come-wild-goose {
+    background-image: url("../images/come_wild_goose.png");
+    background-repeat: no-repeat;
+    width: 6.4rem;
+    height: 5.31rem;
+    position: absolute;
+    left: 0;
+    top: 0.47rem;
+    z-index: 1;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.page section.s-come .come-mask {
+    position: absolute;
+    background-image: url("../images/come_mask.png");
+    background-repeat: no-repeat;
+    width: 9.4rem;
+    height: 10.4rem;
+    top: 0;
+    right: -0.5rem;
+    z-index: 3;
+    -webkit-background-size: cover;
+    background-size: cover;
+    -webkit-animation: comeMask 2s linear 0.5s both;
+    animation: comeMask 2s linear 0.5s both;
+}
+
+.page section.s-come .come-text {
+    position: absolute;
+    background-image: url("../images/come_text.png");
+    background-repeat: no-repeat;
+    width: 6.27rem;
+    height: 10.32rem;
+    top: 0.13rem;
+    left: 0.08rem;
+    z-index: 3;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.page section.s-morning .morning {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.page section.s-morning .morning.morning-1 {
+    background-image: url("../images/morning_1.png");
+    width: 6.4rem;
+    height: 8.88rem;
+    position: absolute;
+    top: 0.14rem;
+    left: -0.25rem;
+}
+
+.page section.s-morning .morning.morning-2 {
+    background-image: url("../images/morning_2.png");
+    width: 6.4rem;
+    height: 8.17rem;
+    position: absolute;
+    top: 0.06rem;
+    left: -0.1rem;
+}
+
+.page section.s-busy-am .busy-am {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: absolute;
+}
+
+.page section.s-busy-am .busy-am.busy-am-1 {
+    background-image: url("../images/busy_am_1.png");
+    width: 4.23rem;
+    height: 3.45rem;
+    top: 0.84rem;
+    left: 0.13rem;
+}
+
+.page section.s-busy-am .busy-am.busy-am-2 {
+    background-image: url("../images/busy_am_2.png");
+    width: 4.15rem;
+    height: 3.36rem;
+    top: 1.31rem;
+    left: 0.13rem;
+}
+
+.page section.s-busy-am .busy-am.busy-am-3 {
+    background-image: url("../images/busy_am_3.png");
+    width: 4.18rem;
+    height: 3.37rem;
+    top: 0.3rem;
+    left: 0.15rem;
+}
+
+.page section.s-busy-pm .busy-pm {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: absolute;
+}
+
+.page section.s-busy-pm .busy-pm.busy-pm-1 {
+    background-image: url("../images/busy_am_1.png");
+    width: 4.23rem;
+    height: 3.45rem;
+    top: 0.84rem;
+    left: 0.13rem;
+}
+
+.page section.s-busy-pm .busy-pm.busy-pm-2 {
+    background-image: url("../images/busy_am_2.png");
+    width: 4.15rem;
+    height: 3.36rem;
+    top: 1.31rem;
+    left: 0.13rem;
+}
+
+.page section.s-busy-pm .busy-pm.busy-pm-3 {
+    background-image: url("../images/busy_am_3.png");
+    width: 4.18rem;
+    height: 3.37rem;
+    top: 0.3rem;
+    left: 0.15rem;
+}
+
+.page section.s-gift {
+    background-image: url("../images/gift_bg.png");
+}
+
+.page section.s-gift .number {
+    top: 8.59rem;
+    right: 3.05rem;
+}
+
+.page section.s-gift .gift {
+    background-repeat: no-repeat;
+    -webkit-background-size: 10rem 5.88rem;
+    background-size: 10rem 5.88rem;
+    position: absolute;
+}
+
+.page section.s-gift .gift.gift-9 {
+    width: 1.86rem;
+    height: 2.7rem;
+    background-position: -8.14rem -2.96rem;
+    top: 4.43rem;
+    left: 0.58rem;
+}
+
+.page section.s-gift .gift.gift-8 {
+    width: 1.85rem;
+    height: 2.79rem;
+    background-position: -5.55rem -3.09rem;
+    top: 4.62rem;
+    left: 0.54rem;
+}
+
+.page section.s-gift .gift.gift-7 {
+    width: 2.19rem;
+    height: 2.90rem;
+    background-position: -2.6rem -2.99rem;
+    top: 4.99rem;
+    left: 0.12rem;
+}
+
+.page section.s-gift .gift.gift-6 {
+    width: 2.17rem;
+    height: 2.94rem;
+    background-position: 0rem -2.95rem;
+    top: 5.35rem;
+    left: -0.08rem;
+}
+
+.page section.s-gift .gift.gift-5 {
+    width: 1.83rem;
+    height: 2.92rem;
+    background-position: -6.38rem -0.04rem;
+    top: 5.62rem;
+    left: 0.02rem;
+}
+
+.page section.s-gift .gift.gift-4 {
+    width: 1.52rem;
+    height: 2.59rem;
+    background-position: -4.04rem 0rem;
+    top: 5.9rem;
+    left: 0;
+}
+
+.page section.s-gift .gift.gift-3 {
+    width: 1.08rem;
+    height: 2.05rem;
+    background-position: -1.95rem 0rem;
+    top: 6.14rem;
+    left: -0.08rem;
+}
+
+.page section.s-gift .gift.gift-2 {
+    width: 0.7rem;
+    height: 1.72rem;
+    background-position: -2.04rem 0rem;
+    top: 6.32rem;
+    left: 0;
+}
+
+.page section.s-gift .gift.gift-1 {
+    width: 0.34rem;
+    height: 1.02rem;
+    background-position: 0rem 0rem;
+    top: 6.16rem;
+    left: 0;
+}
+
+.page section.s-foot .share {
+    width: 3.79rem;
+    height: 1.01rem;
+    position: absolute;
+    top: 7.67rem;
+    left: 1.25rem;
+    background: url("../images/nodata_btn.png") no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    -webkit-animation: footShare 1s linear infinite;
+    animation: footShare 1s linear infinite;
+}
+
+.page section.s-foot .share-2 {
+    width: 3.79rem;
+    height: 1.01rem;
+    left: 50%;
+    margin-left: -1.895rem;
+    background-image: url("../images/share_btn_2.png");
+}
+
+.page section.s-foot .silk-root {
+    background: url("../images/foot_silk.png") no-repeat;
+    width: 4.36rem;
+    height: 4.96rem;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    top: 2.38rem;
+    left: 1.32rem;
+}
+
+.page section.s-foot .silk {
+    background-repeat: no-repeat;
+    width: 11.7rem;
+    height: 1.84rem;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    top: 5.12rem;
+    left: 4.18rem;
+    /*-webkit-animation: footSilk 1s linear infinite alternate;
+          animation: footSilk 1s linear infinite alternate;*/
+}
+
+.page section.s-foot .silk.silk-1 {
+    background-position: 0 0;
+}
+
+.page section.s-foot .silk.silk-2 {
+    background-position: -2.78rem 0;
+}
+
+.page section.s-foot .silk.silk-3 {
+    background-position: -5.57rem 0;
+    /*width: 1.47rem;
+            height: 1.8rem;*/
+}
+
+.page section.s-foot .silk.silk-4 {
+    background-position: -7.87rem 0;
+    /*width: 1.45rem;
+            height: 1.83rem; */
+}
+
+.page section.s-foot .silk.silk-5 {
+    background-position: -10.32rem 0;
+    /*width: 1.4rem;
+            height: 1.84rem;*/
+}
+
+
+/*首页-路动画帧*/
+
+@-webkit-keyframes indexRoad {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes indexRoad {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+
+/*等-指针动画帧*/
+
+@-webkit-keyframes waitTime {
+    0%,
+    7% {
+        -webkit-transform: rotate(0deg);
+    }
+    8%,
+    15% {
+        -webkit-transform: rotate(29deg);
+    }
+    16%,
+    23% {
+        -webkit-transform: rotate(57deg);
+    }
+    24%,
+    31% {
+        -webkit-transform: rotate(85deg);
+    }
+    32%,
+    39% {
+        -webkit-transform: rotate(120deg);
+    }
+    40%,
+    47% {
+        -webkit-transform: rotate(150deg);
+    }
+    48%,
+    55% {
+        -webkit-transform: rotate(180deg);
+    }
+    56%,
+    63% {
+        -webkit-transform: rotate(203deg);
+    }
+    64%,
+    71% {
+        -webkit-transform: rotate(233deg);
+    }
+    72%,
+    79% {
+        -webkit-transform: rotate(263deg);
+    }
+    80%,
+    87% {
+        -webkit-transform: rotate(293deg);
+    }
+    88%,
+    95% {
+        -webkit-transform: rotate(330deg);
+    }
+    96%,
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes waitTime {
+    0%,
+    7% {
+        -webkit-transform: rotate(0deg);
+    }
+    8%,
+    15% {
+        -webkit-transform: rotate(29deg);
+    }
+    16%,
+    23% {
+        -webkit-transform: rotate(57deg);
+    }
+    24%,
+    31% {
+        -webkit-transform: rotate(85deg);
+    }
+    32%,
+    39% {
+        -webkit-transform: rotate(120deg);
+    }
+    40%,
+    47% {
+        -webkit-transform: rotate(150deg);
+    }
+    48%,
+    55% {
+        -webkit-transform: rotate(180deg);
+    }
+    56%,
+    63% {
+        -webkit-transform: rotate(203deg);
+    }
+    64%,
+    71% {
+        -webkit-transform: rotate(233deg);
+    }
+    72%,
+    79% {
+        -webkit-transform: rotate(263deg);
+    }
+    80%,
+    87% {
+        -webkit-transform: rotate(293deg);
+    }
+    88%,
+    95% {
+        -webkit-transform: rotate(330deg);
+    }
+    96%,
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+
+/*归-大雁动画帧*/
+
+@-webkit-keyframes comeMask {
+    0% {
+        right: -0.5rem;
+    }
+    100% {
+        right: 9.4rem;
+    }
+}
+
+@keyframes comeMask {
+    0% {
+        right: -0.5rem;
+    }
+    100% {
+        right: 9.4rem;
+    }
+}
+
+
+/*行-遮罩动画帧*/
+
+@-webkit-keyframes walkMask {
+    0% {
+        top: -3.4rem;
+        left: -4.5rem;
+    }
+    100% {
+        top: -6rem;
+        left: 4rem;
+    }
+}
+
+@keyframes walkMask {
+    0% {
+        top: -3.4rem;
+        left: -4.5rem;
+    }
+    100% {
+        top: -6rem;
+        left: 4rem;
+    }
+}
+
+
+/*尾-分享按钮动画帧*/
+
+@-webkit-keyframes footShare {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(0.95);
+        transform: scale(0.95);
+    }
+}
+
+@keyframes footShare {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(0.95);
+        transform: scale(0.95);
+    }
+}
+
+
+/*musicAni*/
+
+@-webkit-keyframes musicAni {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    @keyframes musicAni {
+        0% {
+            -webkit-transform: rotate(0);
+            transform: rotate(0);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+}
